@@ -1,0 +1,12 @@
+<%= form_for @animal do |a| %>
+  <%= a.label :name, "Enter a name" %>
+  <%= a.text_field :name %>
+
+  <%= a.label :category, "Select a category" %>
+  <%= a.select :category, Animal::CATEGORIES, prompt: "Choose one category" %>
+
+  <%= a.label :found_at, "Where you find?" %>
+  <%= a.date_field :found_at %>
+
+  <%= a.submit %>
+<% end %>
