@@ -1,6 +1,8 @@
 
 
-<h3><%= @animals.name %></h3>
-<h3><%= @animals.category %></h3>
-<h2><%= @animals.found_at %></h3>
+<h3><%= @animal.name %></h3>
+<h3><%= @animal.category %></h3>
+<h2><%= @animal.found_at %></h3>
 <%= link_to "see all", animals_path %>
+<%= link_to "edit", edit_animal_path(@animal) %>
+<%= link_to "kill it", animal_path(@animal), method: :delete %>

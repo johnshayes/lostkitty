@@ -1,11 +1,18 @@
 
-<h2>Lost Kittien</h2>
+<h2 class="text-center">Lost Kittens</h2>
 
+<div class="container">
+<div class="row">
 <% @animals.each do |animal| %>
 
+<div class="col-xs-12 col-sm-6 col-md-3">
 <h2><%= animal.name %></h2>
 <h3><%= animal.category %></h3>
 <h2><%= animal.found_at %></h3>
-<%= link_to "checkit", animal_path(animal) %>
-
+<%= link_to "checkit", animal_path(animal), class: "btn btn-primary" %>
+<%= link_to "edit", edit_animal_path(animal), class: "btn btn-primary" %>
+<%= link_to "kill it", animal_path(animal), method: :delete, class: "btn btn-primary" %>
+</div>
 <% end %>
+</div>
+</div>

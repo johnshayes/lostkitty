@@ -1,12 +1,16 @@
-<%= form_for @animal do |a| %>
-  <%= a.label :name, "Enter a name" %>
-  <%= a.text_field :name %>
 
-  <%= a.label :category, "Select a category" %>
-  <%= a.select :category, Animal::CATEGORIES, prompt: "Choose one category" %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <%= simple_form_for @animal do |a| %>
 
-  <%= a.label :found_at, "Where you find?" %>
-  <%= a.date_field :found_at %>
 
-  <%= a.submit %>
-<% end %>
+        <%= a.input :name, label: "Thingy", placeholder: "Cat", label_html: {class: "badge badge-default"} %>
+        <%= a.input :category, label: false, collection: Animal::CATEGORIES, prompt: "choose one", input_html: {class: "input-lg"} %>
+        <%= a.input :found_at, as: :string, placeholder: "16/08/2016", input_html: {id: "found-datepicker"} %>
+
+      <%= a.submit "Go", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
